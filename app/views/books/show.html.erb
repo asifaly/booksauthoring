@@ -1,9 +1,32 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
 </p>
-
+<%= link_to 'New Chapter', new_chapter_path %>
+<table>
+  <thead>
+    <th>Chapter No
+    </th>
+    <th>Chapter Title
+    </th>
+    <th>Show
+    </th>
+    <th>Edit
+    </th>
+    <th>Destroy
+    </th>
+  </thead>
+  <tbody>
+    <% @chapters.each do |chapter| %>
+      <tr>
+        <td><%= chapter.chapter_no %></td>
+        <td><%= chapter.title %></td>
+        <td><%= link_to 'Show', chapter %></td>
+        <td><%= link_to 'Edit', edit_chapter_path(@book) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+  <%= link_to 'Back', books_path %>
