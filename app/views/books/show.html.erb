@@ -24,6 +24,7 @@
         <td><%= chapter.title %></td>
         <td><%= link_to 'Show', chapter %></td>
         <td><%= link_to 'Edit', edit_chapter_path(@book) %></td>
+        <td><%= link_to 'Destroy', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

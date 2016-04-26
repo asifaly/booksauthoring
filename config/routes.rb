@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :books
   resources :chapters
+  resources :sections
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

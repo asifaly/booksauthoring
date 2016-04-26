@@ -5,4 +5,30 @@
   <strong>Chapter No:</strong>
   <%= @chapter.chapter_no %>
 </p>
-<%= link_to 'Back to Book', book_path(@chapter.book_id) %>
+<%= link_to 'New Section', new_section_path %>
+<table>
+  <thead>
+    <th>Section No
+    </th>
+    <th>Section Title
+    </th>
+    <th>Show
+    </th>
+    <th>Edit
+    </th>
+    <th>Destroy
+    </th>
+  </thead>
+  <tbody>
+    <% @sections.each do |section| %>
+      <tr>
+        <td><%= section.section_no %></td>
+        <td><%= section.title %></td>
+        <td><%= link_to 'Show', section %></td>
+        <td><%= link_to 'Edit', edit_section_path(@chapter) %></td>
+        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%# link_to 'Back to Chapter', book_path %>
