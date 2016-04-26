@@ -21,6 +21,7 @@ class ChaptersController < ApplicationController
   end
 
   def show
+    # @book = Book.find(params[:id])
     @chapter = Chapter.find(params[:id])
     @sections = @chapter.sections
   end

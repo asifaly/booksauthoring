@@ -40,6 +40,7 @@ class SectionsController < ApplicationController
   end
 
   def show
+    @chapter = Chapter.find(params[:id]) # removing this line breaks Back to chapter, check with Satya
     @section = Section.find(params[:id])
   end
 
@@ -49,6 +50,6 @@ class SectionsController < ApplicationController
 
   private
   def section_params
-    params.require(:section).permit(:title, :section_no, :chapter_id)
+    params.require(:section).permit(:title, :section_no, :content, :chapter_id)
   end
 end

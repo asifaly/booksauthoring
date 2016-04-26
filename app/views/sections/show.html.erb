@@ -2,7 +2,13 @@
 <p>
   <strong>Title:</strong>
   <%= @section.title %>
+</p>
+<p>
   <strong>Section No:</strong>
   <%= @section.section_no %>
 </p>
-<%# link_to 'Back to Chapter', book_path %>
+<p>
+  <strong>Content:</strong>
+  <%= @section.content %>
+</p>
+<%= link_to 'Back to Chapter', chapter_path(@section.chapter_id) %>
